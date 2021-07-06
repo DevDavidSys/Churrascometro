@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Churrascometro</title>
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    </head>
+    <body>
+        <div>
+            <h2>Qnt Adultos</h2>
+            <input type="number" id="adulto" >
+            <h2>Qnt Crianças</h2>
+            <input type="number" id="crianca">
+            <h2>Duração do Churrasco</h2>
+            <input type="number" id="dur">
+            <input type="submit" onclick="calcular(document.getElementById('adulto').value,document.getElementById('crianca').value,document.getElementById('dur'))" value="Calcular">
+            <h1 id="resultado"></h1>
+
+        </div>
+        <script >
+            function calcular(adulto,crianca,dur){
+                var adulto = document.getElementById('adulto').value;
+                var crianca = document.getElementById('crianca').value;
+                var dur = document.getElementById('dur').value;
+                if(dur > 6){
+                    var carne_por_adulto = 0.650;
+                    var cerveja_por_adulto = 2;
+                    var bebida_por_adulto = 2;
+                }
+                else{
+                    var carne_por_adulto = 0.450;
+                    var cerveja_por_adulto = 1.2;
+                    var bebida_por_adulto = 1.5;
+                }
+                var qntCarne = adulto*carne_por_adulto+(crianca*carne_por_adulto/2);
+                var qntCerveja = adulto * cerveja_por_adulto;
+                var qntBebidas = adulto * bebida_por_adulto + (crianca*bebida_por_adulto/2);
+                console.log(`Quantidade de carne = ${qntCarne} Kg,Quantidade de cerveja = ${cerveja_por_adulto}`);
+
+                document.getElementById('resultado').innerHTML = `<p>${qntCarne} Kg de carne</p>`;
+                
+                document.getElementById('resultado').innerHTML += `<p>${qntCerveja} L de cerveja</p>`;
+                document.getElementById('resultado').innerHTML += `<p>${qntCarne} L de bebidas</p>`;
+            }
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+html,body{
+    height: 100%;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+div{
+    width: 50%;
+    margin: 0 auto;
+    background-color: rgb(178, 230, 250);
+    text-align: center;
+}
+h1{
+    font-size: 24px;
+    display: block;
+    
+    
+}
